@@ -74,6 +74,23 @@
 
     </dependencies>
 
+    <distributionManagement>
+
+            <repository>
+              <id>nexus</id>
+              <name>Win Releases Nexus Repository</name>
+              <url>http://100.25.194.85:8082/hello/repository/win-releases/</url>
+            </repository>
+
+            <snapshotRepository>
+              <id>nexus</id>
+              <name>Win Snapshot Nexus Repository</name>
+              <url>http://100.25.194.85:8082/hello/repository/win-snapshot/</url>
+            </snapshotRepository>
+
+    </distributionManagement>
+     
+
     <build>
             <finalName>my-web-application</finalName>
         <plugins>
