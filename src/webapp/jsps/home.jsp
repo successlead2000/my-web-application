@@ -1,1 +1,1 @@
-Best Live Projects of DevOps
+Best Live Projects for DevOps.
