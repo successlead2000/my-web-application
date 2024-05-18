@@ -5,8 +5,8 @@
 
     <groupId>com.example</groupId>
     <artifactId>my-web-application</artifactId>
-        <packaging>war</packaging>
-    <version>1.0.0</version>
+    <packaging>war</packaging>
+    <version>1.0.0-SNAPSHOT</version>
 
         <name>my-web-application</name>
 
@@ -16,7 +16,9 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-                <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <sonar.host.url>http://54.157.138.134:9000/</sonar.host.url>
+        <sonar.login>squ_6c712c40605310d48636a9f20bfbcfc7eaabbf92</sonar.login>
 
     </properties>
 
@@ -71,6 +73,23 @@
         </dependency>
 
     </dependencies>
+
+    <distributionManagement>
+
+            <repository>
+              <id>nexus</id>
+              <name>Win Releases Nexus Repository</name>
+              <url>http://52.3.244.61:8082/hello/repository/win-releases/</url>
+            </repository>
+
+            <snapshotRepository>
+              <id>nexus</id>
+              <name>Win Snapshot Nexus Repository</name>
+              <url>http://52.3.244.61:8082/hello/repository/win-snapshot/</url>
+            </snapshotRepository>
+
+    </distributionManagement>
+     
 
     <build>
             <finalName>my-web-application</finalName>
