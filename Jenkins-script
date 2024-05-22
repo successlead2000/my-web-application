@@ -6,6 +6,7 @@ echo "The Job name is:  ${env.JOB_NAME}"
 echo "The Build number is: ${env.BUILD_NUMBER}"
 
 properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '3', daysToKeepStr: '', numToKeepStr: '3')), [$class: 'JobLocalConfiguration', changeReasonComment: '']])
+properties([[$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])
 
 //Create One Variable for Maven Install on Jenkins Server
 def mavenHome = tool name: "maven-3.9.6"
