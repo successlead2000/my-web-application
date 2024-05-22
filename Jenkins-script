@@ -1,0 +1,38 @@
+//This is for master node
+node{
+
+//Create One Variable for Maven Install on Jenkins Server
+def mavenHome = tool name: "maven-3.9.6"
+
+//Source Code Management
+stage('CheckoutCode'){
+git branch: 'development', url: 'https://github.com/successlead2000/my-web-application.git'
+}
+
+
+//Build Artifact by using Source Code
+stage('BuildArtifact'){
+sh "$mavenHome/bin/mvn clean package"
+}
+
+
+//Generate SonarQube Report
+stage('SonarQubeReport'){
+sh "$mavenHome/bin/mvn sonar:sonar"
+}
+
+
+//Upload Artifact into Nexus Artifact Repository
+stage('UploadArtifact'){
+sh "$mavenHome/bin/mvn deploy"
+}
+
+
+//Deploy Artifact into Tomcat Application Server
+stage('DeployAppIntoTomcat'){
+sshagent(['demo']) { 
+sh "scp -o StrictHostKeyChecking=no target/my-web-application.war ubuntu@54.157.148.2:/opt/apache-tomcat-10.1.23/webapps"
+}
+}
+
+}//Node Closing
