@@ -40,7 +40,7 @@ sh "$mavenHome/bin/mvn deploy"
 //Deploy Artifact into Tomcat Application Server
 stage('DeployAppIntoTomcat'){
 sshagent(['demo']) { 
-sh "scp -o StrictHostKeyChecking=no target/my-web-application.war ubuntu@54.157.148.2:/opt/apache-tomcat-10.1.23/webapps"
+sh "scp -o StrictHostKeyChecking=no target/my-web-application.war ubuntu@54.210.175.57:/opt/apache-tomcat-10.1.23/webapps"
 }
 }
 
