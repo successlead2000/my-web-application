@@ -10,6 +10,8 @@ properties([[$class: 'JobLocalConfiguration', changeReasonComment: ''], pipeline
 
 buildName 'Dev - ${BUILD_NUMBER}'
 
+buildDescription 'Pipeline Script - Scriptedway'
+
 //Create One Variable for Maven Install on Jenkins Server
 def mavenHome = tool name: "maven-3.9.6"
 
