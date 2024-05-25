@@ -17,7 +17,7 @@
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <sonar.host.url>http://54.237.62.52:9000/</sonar.host.url>
+        <sonar.host.url>http://18.210.33.151:9000/</sonar.host.url>
         <sonar.login>squ_6c712c40605310d48636a9f20bfbcfc7eaabbf92</sonar.login>
 
     </properties>
@@ -79,13 +79,13 @@
             <repository>
               <id>nexus</id>
               <name>Win Releases Nexus Repository</name>
-              <url>http://100.24.237.37:8082/hello/repository/win-releases/</url>
+              <url>http://34.229.171.250:8082/hello/repository/win-releases/</url>
             </repository>
 
             <snapshotRepository>
               <id>nexus</id>
               <name>Win Snapshot Nexus Repository</name>
-              <url>http://100.24.237.37:8082/hello/repository/win-snapshot/</url>
+              <url>http://34.229.171.250:8082/hello/repository/win-snapshot/</url>
             </snapshotRepository>
 
     </distributionManagement>
